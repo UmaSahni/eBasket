@@ -1,4 +1,6 @@
 import { Image,Box, Heading, Flex, Wrap, WrapItem, Center, Spacer,  } from '@chakra-ui/react'
+import { Icon } from '@chakra-ui/react'
+import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { wrap } from 'framer-motion'
 import React from 'react'
 
@@ -35,9 +37,11 @@ const imagesList = [
   ]
 const DailyDeals = () => {
   
-  console.log(imagesList)
+ 
   
   return ( 
+    <Box>
+      <Heading m={"3"} size={"md"}> Daily Deals | See All <Icon as={ArrowForwardIcon} />  </Heading>
      <Wrap justify="space-around"  >
       {
         imagesList.map((el)=>{
@@ -53,7 +57,7 @@ const DailyDeals = () => {
         })
       }
     </Wrap>
-    
+    </Box>
     
   )
 }
