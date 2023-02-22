@@ -23,7 +23,7 @@ const images = [
 const ImageCarousel = () => {
     
     return (
-      <Box w="100%" h="400px" position="relative">
+      <Box w="100%"  position="relative">
       <Carousel showArrows={true} infiniteLoop={true}>
         {images.map((image, index) => (
           <Box key={index}>
