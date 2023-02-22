@@ -6,6 +6,7 @@ import BigSquare from '../Homepage/BigSquare'
 import CircleRow from '../Homepage/CircleRow'
 import DailyDeals from '../Homepage/DailyDeals'
 import OrangeBox from '../Homepage/OrangeBox'
+import Footer from '../Homepage/Footer'
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
    <OrangeBox/>
    <CircleRow/>
    <BigSquare/>
+   <Footer/>
    </Box>
   )
 }
