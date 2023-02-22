@@ -1,51 +1,61 @@
-import React, { useState } from "react";
-import { Box, Button, Center, Flex, Image, Stack } from "@chakra-ui/react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Image,Box, Heading, Flex, Wrap, WrapItem, Center, Spacer,  } from '@chakra-ui/react'
+import { wrap } from 'framer-motion'
+import React from 'react'
 
-const images = [
-  "https://picsum.photos/id/1015/400/200",
-  "https://picsum.photos/id/1016/400/200",
-  "https://picsum.photos/id/1018/400/200",
-  "https://picsum.photos/id/1019/400/200",
-  "https://picsum.photos/id/1020/400/200",
-  "https://picsum.photos/id/1021/400/200",
-  "https://picsum.photos/id/1022/400/200",
-  "https://picsum.photos/id/1023/400/200",
-  "https://picsum.photos/id/1024/400/200",
-];
+const imagesList = [
+  {
+    src : "https://i.ebayimg.com/images/g/xNwAAOSwYlNjwUvO/s-l225.webp",
+    alt : "latest laptops",
+    price : "$ 6999",
+    discount : "77 % OFF"
+  },
+  {
+    "src" : "https://i.ebayimg.com/thumbs/images/g/jBwAAOSwimlioR-E/s-l225.webp",
+    "alt" : "Samart Phone",
+    "price" : "$ 499",
+    "discount" : "77 % OFF"
+  }, 
+  {
+    "src" : "https://i.ebayimg.com/thumbs/images/g/UvMAAOSwamxhwtWm/s-l200.webp",
+    "alt" : "Men's Watch",
+    "price" : "$ 54",
+    "discount" : "77 % OFF"
+  }, {
+    "src" : "https://i.ebayimg.com/thumbs/images/g/NAMAAOSwsXRiyU2l/s-l200.webp",
+    "alt" : "Sun Glasses",
+    "price" : "$ 13",
+    "discount" : "77 % OFF"
+  }, {
+    "src" : "https://i.ebayimg.com/thumbs/images/g/NswAAOSwFLtjVfgJ/s-l200.webp",
+    "alt" : "Men's Shoes",
+    "price" : "$ 6999",
+    "discount" : "77 % OFF"
+  }
 
-function ImageSlider() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handlePrevClick = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 4 < 0 ? images.length - 4 : prevIndex - 4));
-  };
-
-  const handleNextClick = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 4 >= images.length ? 0 : prevIndex + 4));
-  };
-
-  const displayedImages = images.slice(currentIndex, currentIndex + 4);
-
-  return (
-    <Box position="relative">
-      <Flex alignItems="center" justifyContent="space-between" mb={2}>
-        <Button variant="ghost" onClick={handlePrevClick} leftIcon={<FaChevronLeft />} />
-        <Center w="50%">
-          <Stack direction="row" spacing={4}>
-            {displayedImages.map((imageUrl, index) => (
-              <Center key={index} w="25%">
-                <Image  src={imageUrl} alt={`Image ${currentIndex + index}`} />
-              </Center>
-            ))}
-          </Stack>
-        </Center>
-        <Center w="25%">
-          <Button variant="ghost" onClick={handleNextClick} rightIcon={<FaChevronRight />} />
-        </Center>
-      </Flex>
-    </Box>
-  );
+  ]
+const DailyDeals = () => {
+  
+  console.log(imagesList)
+  
+  return ( 
+     <Wrap justify="space-around"  >
+      {
+        imagesList.map((el)=>{
+          return   <Box border={"1px solid red"} > 
+            <Box width={"200px"} height="200px"  > <Image src={el.src} alt={el.alt} /> </Box>
+            <Box textAlign={"center"} >
+            <Heading size='sm' >{el.alt}</Heading>
+            <Heading size='sm' >{el.price}</Heading>
+            <Heading size='sm' >{el.discount}</Heading>
+            </Box>
+            </Box>
+            
+        })
+      }
+    </Wrap>
+    
+    
+  )
 }
 
-export default ImageSlider;
+export default DailyDeals
