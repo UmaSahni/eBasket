@@ -3,6 +3,7 @@ import React from 'react'
 
 const ShowProduct = ({title,thumbnail,description,price,rating,brand}) => {
   return (
+    
     <Card maxW='300px'>
   <CardBody>
     <Box boxSize={"200px"} >
@@ -14,6 +15,7 @@ const ShowProduct = ({title,thumbnail,description,price,rating,brand}) => {
     />
     </Box>
     <Stack mt='6' spacing='1'>
+    <Box h={"150px"} >
       <Heading size='md'>{title}</Heading>
      
       <Text color='blue.600' fontWeight={"bold"} fontSize='2xl'>
@@ -31,10 +33,12 @@ const ShowProduct = ({title,thumbnail,description,price,rating,brand}) => {
         }
        {" "} items sold
       </Text>
+      </Box>
     </Stack>
   </CardBody>
  
 </Card>
+
   )
 }
 
