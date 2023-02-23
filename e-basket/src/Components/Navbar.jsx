@@ -11,6 +11,7 @@ import {
   Image
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -32,13 +33,14 @@ export default function Navbar() {
     <Flex
       bg={useColorModeValue("WhiteAlpha.600", "WhiteAlpha.600")}
       color={useColorModeValue("WhiteAlpha.600", "WhiteAlpha.600")}
-      minH={"60px"}
+      minH={"50px"}
       py={{ base: 2 }}
       px={{ base: 4 }}
       borderBottom={1}
       borderStyle={"solid"}
       borderColor={useColorModeValue("WhiteAlpha.600", "WhiteAlpha.600")}
       align={"center"}
+     
     >
       <Flex
         flex={{ base: 1, md: "auto" }}
@@ -53,11 +55,13 @@ export default function Navbar() {
         />
       </Flex>
       <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+        <Link to={"/"} >
         <Box>
-          <Image src="logo192.png" width={"100px"}  href={"/"} _hover={{ textDecoration: "none" }}>
+          <Image src="logo192.png" width={"100px"} _hover={{ textDecoration: "none" }}>
           
           </Image>
         </Box>
+        </Link>
         {isMobile ? (
           <Collapse in={isOpen} animateOpacity>
             <MobileNav />
@@ -72,19 +76,29 @@ export default function Navbar() {
 
 const DesktopNav = () => {
   return (
-    <Stack direction={"row"} spacing={9}>
+    <Stack align={"center"} fontSize={"md"}  color="gray" direction={"row"} spacing={9}>
       <Button as={"a"} variant={"link"} href={"/"} _hover={{ textDecoration: "none" }}>
-        
       </Button>
-      <Button as={"a"} variant={"link"} href={"/about"} _hover={{ textDecoration: "none" }}>
-        About
-      </Button>
-      <Button as={"a"} variant={"link"} href={"/services"} _hover={{ textDecoration: "none" }}>
+     
+      <Link to={"/shoes"} >
+        Shoes
+      </Link>
+      <Link to={"/laptop"} >
+        laptop
+      </Link>
+      <Link to={"/shoes"} >
+        Shoes
+      </Link>
+      <Link to={"/shoes"} >
+        Shoes
+      </Link>
+     
+      {/* <Button as={"a"} variant={"link"} href={"/services"} _hover={{ textDecoration: "none" }}>
         Services
       </Button>
       <Button as={"a"} variant={"link"} href={"/contact"} _hover={{ textDecoration: "none" }}>
         Contact
-      </Button>
+      </Button> */}
     </Stack>
   );
 };
