@@ -1,10 +1,11 @@
-import axios from 'axios';
-
-const SetUrl  = ( ) =>{
-    
-}
+// import axios from 'axios';
 
 
-export  const GetShoes = (page) =>{
-    return  axios.get(`https://ebasket.onrender.com/mens-shoes?_page=${page}&_limit=8`)
-  }
+
+// export  const GetShoes = (page=1, oderby) =>{
+//   const baseURL = `https://turquoise-snapper-hat.cyclic.app/mens-shoes?_page=${page}&_limit=8`
+//   if(oderby){
+//     baseURL= `https://turquoise-snapper-hat.cyclic.app/mens-shoes?_page=${page}&_limit=8&_sort=price&_order=${oderby}`
+//   }
+//     return  axios.get(baseURL)
+//   }
