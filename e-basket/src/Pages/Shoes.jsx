@@ -14,7 +14,7 @@ const Shoes = () => {
             templateColumns='repeat(5, 1fr)'
             gap={4}
           >
-            <GridItem rowSpan={2} colSpan={1} bg='tomato' > <CatBox/></GridItem>
+            <GridItem rowSpan={2} colSpan={1} bg='gray.50' > <CatBox/></GridItem>
             <GridItem colSpan={4}><ShoesProduct/></GridItem>
         </Grid>
        
