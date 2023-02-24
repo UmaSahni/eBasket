@@ -1,16 +1,27 @@
 import { Box, Center, Divider, Grid, GridItem, SimpleGrid } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import axios from 'axios';
+
 import { useEffect } from 'react';
 import ShowProduct from './ShowProduct';
 import Pagination from './Pagination';
-const GetShoes = (page) =>{
-  return  axios.get(`https://ebasket.onrender.com/mens-shoes?_page=${page}&_limit=8`)
+import { useSearchParams } from "react-router-dom";
+import { GetShoes } from '../ApiRequest';
+
+const convertToNum = (page) =>{
+  if(NaN || 0<=page || typeof (page) === "string" || null){
+    return page = 1
+  } else{
+    return +page
+  }
 }
+
+
 const ShoesProduct = () => {
   const [data, setData] = useState([])
-  const [page, setPage] = useState(1)
+  let [searchParams, setSearchParams] = useSearchParams();
+  const [page, setPage] = useState( convertToNum (searchParams.get ("page")))
   const [total, setTotal] = useState(0)
+  console.log( searchParams.get (("page")))
   useEffect(()=>{
     GetShoes(page).then((res)=>{
       setTotal(res.headers.get("x-total-count"))
@@ -18,6 +29,13 @@ const ShoesProduct = () => {
     })
 
   },[page])
+
+  useEffect(()=>{
+    const paramObj = {page:page}
+    setSearchParams(paramObj)
+  },[page])
+  
+  
   const LastPage = Math.ceil(total/8)
   const handleClick = (val) =>{
   setPage(page+val)
