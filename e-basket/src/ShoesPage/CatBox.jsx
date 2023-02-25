@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { GetShoes } from '../ApiRequest'
 import { ShoesContext } from '../Context/ShoesContext'
+import SearchBox from './SearchBox'
 const CatBox = () => {
   const { setOrderBy, handleChangeBrand,handleResetBrand } = useContext(ShoesContext)
 
