@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
+import SearchBox from "../ShoesPage/SearchBox";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -92,7 +93,7 @@ const DesktopNav = () => {
       <Link to={"/shoes"} >
         Shoes
       </Link>
-     
+    <SearchBox/> 
       {/* <Button as={"a"} variant={"link"} href={"/services"} _hover={{ textDecoration: "none" }}>
         Services
       </Button>
@@ -118,6 +119,7 @@ const MobileNav = () => {
       <Button w={"full"} variant={"link"} href={"/contact"} _hover={{ textDecoration: "none" }}>
         Contact
       </Button>
+      
     </Stack>
   );
 };
