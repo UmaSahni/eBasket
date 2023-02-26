@@ -2,6 +2,8 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Box, Button, Code, Divider, Link, Text } from '@chakra-ui/react'
 import React, { useContext } from 'react'
 import { AppCartContext } from '../Context/CartContext'
+import ModalPayment from './ModalPayment'
+import SpinnerPayment from './SpinnerPayment'
 
 const PayBox = () => {
     const {state, dispatch} = useContext(AppCartContext)
@@ -15,7 +17,8 @@ const PayBox = () => {
             <Text fontWeight="bold" mb="2">
             Total: ${state.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2)}
           </Text>
-          <Button width={"100%"} colorScheme="blue" >Pay Now</Button>
+          <ModalPayment/>
+          {/* <Button onClick={()=> <SpinnerPayment/> } width={"100%"} colorScheme="blue" >Pay Now</Button> */}
         </Box>
     </div>
   )
