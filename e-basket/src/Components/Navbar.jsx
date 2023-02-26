@@ -58,7 +58,7 @@ export default function Navbar() {
       <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
         <Link to={"/"} >
         <Box>
-          <Image src="logo192.png" width={"100px"} _hover={{ textDecoration: "none" }}>
+          <Image src="logo192.png" alt="logo" width={"100px"} _hover={{ textDecoration: "none" }}>
           
           </Image>
         </Box>

@@ -4,7 +4,7 @@ import React, { useContext, useState } from 'react'
 import { useEffect } from 'react';
 import ShowProduct from './ShowProduct';
 import Pagination from './Pagination';
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { GetShoes } from '../ApiRequest';
 import { ShoesContext } from '../Context/ShoesContext';
 import SearchBoxFun from './SearchBox';
@@ -28,7 +28,7 @@ const ShoesProduct = () => {
       </Box>
         <Grid templateColumns={{ base:"1", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }} gap={6}>
         {
-            data?.map((el)=> <GridItem><ShowProduct key={el.id} {...el}/></GridItem>)
+            data?.map((el)=> <GridItem> <Link to={`/shoes/${el.id}`} > <ShowProduct key={el.id} {...el}/> </Link> </GridItem>)
         }
         </Grid>
         <Divider marginTop={"8"} />
