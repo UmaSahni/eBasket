@@ -2,6 +2,7 @@ import { Box, Button, Heading, Image, Stack, Table, Tbody, Td, Text, Th, Thead, 
 import { useContext } from "react";
 import { FaTrash } from "react-icons/fa";
 import { AppCartContext } from "../Context/CartContext";
+import { ShoesContext } from "../Context/ShoesContext";
 
 function CartPage() {
 //   const cartItems = [
@@ -26,7 +27,7 @@ function CartPage() {
 //   ];
 
 const {state, dispatch} = useContext(AppCartContext)
-
+const {qty} = useContext(ShoesContext)
   const tableSize = useBreakpointValue({ base: "sm", md: "md" });
 
   return (
@@ -49,10 +50,36 @@ const {state, dispatch} = useContext(AppCartContext)
             <Tr key={item.id}>
               <Td> <Image width={"100px"} src={item.thumbnail} /> </Td>
               <Td> {item.title}</Td>
-              <Td>{item.quantity}</Td>
-              <Td isNumeric>${item.price.toFixed(2)}</Td>
+              {/* Increase Button */}
+              <Td> <Button variant='outline' 
+              onClick={()=>dispatch({type:"INCREASEQTY", payload: item })}
+              >+</Button> {item.quantity} 
+              {/* Decrement Button */}
+                {/* {
+                    item.quantity<=0 ? <Button variant='outline' 
+                    onClick={()=>dispatch({type:"REMOVE", payload:item})}
+                    >-</Button> : <Button variant='outline' 
+                    onClick={()=>dispatch({type:"DECREASEQTY", payload:item})}
+                    >-</Button>
+                } */}
+              
+              <Button variant='outline' 
+              onClick={()=>
+                {
+                  if(item.quantity>1){
+                    dispatch({type:"DECREASEQTY", payload:item})
+                  } 
+                  else{
+                    dispatch({type:"REMOVE", payload:item})
+                  }
+                }
+              }
+              >-</Button>  
+              </Td>
+              
+              <Td isNumeric>{item.price * item.quantity}</Td>
               <Td>
-                <Button variant="ghost" size="sm" colorScheme="red" aria-label={`Remove ${item.name}`} leftIcon={<FaTrash />}>
+                <Button onClick={()=>dispatch({type:"REMOVE", payload:item})} variant="ghost" size="sm" colorScheme="red" aria-label={`Remove ${item.name}`} leftIcon={<FaTrash />}>
                   Remove
                 </Button>
               </Td>

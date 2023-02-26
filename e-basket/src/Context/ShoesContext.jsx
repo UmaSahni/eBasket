@@ -42,6 +42,7 @@ const ShoesContextProvider = ({children}) => {
     const [reset, setReset] = useState(false)
     const [query , setQuery] = useState("")
     const [singleData, setSingleData] = useState({})
+    const [qty, setqty] = useState(1)
     const handleSerach = () =>{
         axios.get(`https://turquoise-snapper-hat.cyclic.app/mens-shoes?q=${query}`)
         .then((res)=> setData(res.data))
@@ -93,7 +94,7 @@ const ShoesContextProvider = ({children}) => {
     setReset(true)
    }
     return (
-    <ShoesContext.Provider value = {{data,LastPage, HandleChange,handleClick,page,order,setOrderBy, setFilterBy, filterBy,handleChangeBrand,handleResetBrand,query,singleData, GetShoes,setQuery, setData, SingleDetailsPage, handleSerach }} >{children}</ShoesContext.Provider>
+    <ShoesContext.Provider value = {{data, qty, setqty, LastPage, HandleChange,handleClick,page,order,setOrderBy, setFilterBy, filterBy,handleChangeBrand,handleResetBrand,query,singleData, GetShoes,setQuery, setData, SingleDetailsPage, handleSerach }} >{children}</ShoesContext.Provider>
   )
 }
 

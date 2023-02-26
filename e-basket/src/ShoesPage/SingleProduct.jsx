@@ -30,7 +30,7 @@ import { AppCartContext } from '../Context/CartContext';
 export default function Simple() {
   const {userid} = useParams()
    
-  const {SingleDetailsPage, singleData} = useContext(ShoesContext)
+  const {SingleDetailsPage, qty, setqty, singleData} = useContext(ShoesContext)
   useEffect(()=>{
     SingleDetailsPage(userid)
   },[])
@@ -127,7 +127,7 @@ const {title, description,price,discountPercentage,rating,stock,brand,category,t
                 </Select>
               </Stack>
               <Stack mt={"3"} >
-              <Input placeholder='Quantity -- By default 1' />
+              <Input value={qty} onChange={(e)=>setqty(e.target.value)} placeholder='Quantity -- By default 1' />
               </Stack>
               {/* <List spacing={2}>
                 <ListItem>
