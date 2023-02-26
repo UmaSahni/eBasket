@@ -94,6 +94,7 @@ const DesktopNav = () => {
         Shoes
       </Link>
     <SearchBox/> 
+    <Link to={"/cart"} >Cart</Link>
       {/* <Button as={"a"} variant={"link"} href={"/services"} _hover={{ textDecoration: "none" }}>
         Services
       </Button>
