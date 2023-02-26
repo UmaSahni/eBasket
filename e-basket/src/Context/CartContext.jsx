@@ -14,9 +14,29 @@ const reducer = (state, {type, payload})=>{
         }
         return [ ...state, payload]
        }
-       
-       
-       
+       case "INCREASEQTY":{
+        let ChangeQuatntity = state.map((item)=>{
+            if(item.id === payload.id){
+                return {...item, quantity: item.quantity+1}
+            }
+            return item
+            
+        })
+        return ChangeQuatntity
+       }
+       case "DECREASEQTY" : {
+        let ChangeQuantityDec = state.map((item)=>{
+            if(item.id===payload.id){
+                return {...item, quantity:item.quantity-1}
+            }
+            return item
+        })
+        return ChangeQuantityDec
+       }
+       case "REMOVE" : {
+        let RemoveProduct = state.filter((item)=>item.id !==payload.id)
+        return RemoveProduct
+       }
         default : return state
     }
 }
