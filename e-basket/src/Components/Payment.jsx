@@ -1,5 +1,6 @@
 import { Box, Center, Divider, Heading, HStack, Image, Radio, RadioGroup, Stack, Table, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr, Wrap, WrapItem } from '@chakra-ui/react'
 import React from 'react'
+import PayBox from './PayBox'
 import ShipBox from './ShipBox'
 
 
@@ -15,10 +16,10 @@ const Payment = () => {
     </Center>
     <Center>
         {/* border={"1px solid green"} */}
-        <Box  >
+        <Box      >
         <Wrap  >
         <WrapItem>
-            <Box p={"4"} w='600px' h='auto' border={"1px solid #E2E8F0"} >
+            <Box p={"4"} width="40vw" h='auto' border={"1px solid #E2E8F0"} >
             
         
                 <RadioGroup onChange={setValue} value={value}>
@@ -49,15 +50,15 @@ const Payment = () => {
         </WrapItem>
            
         <WrapItem>
-            <Center w='300px' h='80px' bg='green.200'>
-                        Box 2
+            <Center  >
+                     <PayBox/>
             </Center>
         </WrapItem>
         
         </Wrap>
         
           {/* Ship Box */}
-            <Box mt={"4"} p={"4"} w='600px' h='60vh' border={"1px solid #E2E8F0"} >
+            <Box mt={"4"} p={"4"} w='600px' border={"1px solid #E2E8F0"} >
             <ShipBox/>
             </Box>
        
