@@ -28,7 +28,7 @@ const ShoesProduct = () => {
       </Box>
         <Grid templateColumns={{ base:"1", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }} gap={6}>
         {
-            data?.map((el)=> <GridItem> <Link to={`/shoes/${el.id}`} > <ShowProduct key={el.id} {...el}/> </Link> </GridItem>)
+            data?.map((el)=> <GridItem> <Link to={`/shoes/${el.id}`} > <ShowProduct key={el.id} quantity="1"  {...el }/> </Link> </GridItem>)
         }
         </Grid>
         <Divider marginTop={"8"} />

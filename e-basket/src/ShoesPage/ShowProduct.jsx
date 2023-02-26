@@ -2,6 +2,7 @@ import { Box, Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading,
 import React from 'react'
 
 const ShowProduct = ({title,thumbnail,description,price,rating,brand}) => {
+ 
   return (
     
     <Card maxW='300px'>

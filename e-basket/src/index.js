@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react'
 import {BrowserRouter} from "react-router-dom"
 import ShoesContextProvider from './Context/ShoesContext';
+import CartContext from './Context/CartContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +14,9 @@ root.render(
   <BrowserRouter>
   <ChakraProvider>
   <ShoesContextProvider>
+  <CartContext>
     <App />
+  </CartContext>  
   </ShoesContextProvider>
   </ChakraProvider>
   </BrowserRouter>

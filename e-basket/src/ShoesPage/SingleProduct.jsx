@@ -26,6 +26,7 @@ import {  useParams } from 'react-router-dom';
 import Carousel2 from '../Components/Carousel2';
 import ImageCarousel from '../Components/ImageCarousel';
 import { ShoesContext } from '../Context/ShoesContext';
+import { AppCartContext } from '../Context/CartContext';
 export default function Simple() {
   const {userid} = useParams()
    
@@ -33,8 +34,10 @@ export default function Simple() {
   useEffect(()=>{
     SingleDetailsPage(userid)
   },[])
-console.log(singleData)
+  const {state, dispatch} = useContext(AppCartContext)
+  console.log(state, "this is cart state")
 const {title, description,price,discountPercentage,rating,stock,brand,category,thumbnail} = singleData
+
   return (
     <Container maxW={'7xl'}>
       <SimpleGrid
@@ -179,7 +182,7 @@ const {title, description,price,discountPercentage,rating,stock,brand,category,t
             Buy it Now
           </Button>
           <Button  p={"2"} width={"45%"} rounded={"50"} colorScheme='blue'
-          
+          onClick={()=>dispatch({type:"AddTOCART", payload:singleData})}
           >
             Add to cart
           </Button>
