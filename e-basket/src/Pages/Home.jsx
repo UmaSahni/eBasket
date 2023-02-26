@@ -5,6 +5,7 @@ import Navbar from '../Components/Navbar'
 import BigSquare from '../Homepage/BigSquare'
 import CircleRow from '../Homepage/CircleRow'
 import DailyDeals from '../Homepage/DailyDeals'
+import Footer from '../Homepage/Footer'
 import OrangeBox from '../Homepage/OrangeBox'
 
 
@@ -17,7 +18,7 @@ const Home = () => {
    <OrangeBox/>
    <CircleRow/>
    <BigSquare/>
-   
+   <Footer/>
    </Box>
   )
 }

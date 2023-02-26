@@ -3,6 +3,7 @@ import { Icon } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { wrap } from 'framer-motion'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const imagesList = [
   {
@@ -45,7 +46,7 @@ const DailyDeals = () => {
      <Wrap justify="space-around"  >
       {
         imagesList.map((el)=>{
-          return   <Box border={"1px solid red"}  key={Date.now()}> 
+          return <Link to={"/shoes"} >  <Box border={"1px solid #E2E8F0"}  key={Date.now()}> 
             <Box width={"200px"} height="200px"  > <Image src={el.src} alt={el.alt} /> </Box>
             <Box textAlign={"center"} >
             <Heading size='sm' >{el.alt}</Heading>
@@ -53,7 +54,7 @@ const DailyDeals = () => {
             <Heading size='sm' >{el.discount}</Heading>
             </Box>
             </Box>
-            
+            </Link>
         })
       }
     </Wrap>

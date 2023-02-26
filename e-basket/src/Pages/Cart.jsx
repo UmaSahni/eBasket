@@ -98,7 +98,9 @@ const {qty} = useContext(ShoesContext)
             Checkout
           </Button>
           </Link>
-          <Button variant="ghost">Continue Shopping</Button>
+          <Link to={"/shoes"} >
+          <Button  variant="ghost">Continue Shopping</Button>
+          </Link>
         </Box>
       </Stack>
     </Box>

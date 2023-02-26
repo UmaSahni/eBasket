@@ -11,6 +11,7 @@ import {
     Button,
   } from '@chakra-ui/react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import SpinnerPayment from './SpinnerPayment'
  
  
@@ -30,17 +31,19 @@ import SpinnerPayment from './SpinnerPayment'
         <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Modal Title</ModalHeader>
+            <ModalHeader>Payment Status</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
              <SpinnerPayment/>
             </ModalBody>
   
             <ModalFooter>
-              <Button colorScheme='blue' mr={3} onClick={onClose}>
+              <Button variant='outline'  mr={3} onClick={onClose}>
                 Close
               </Button>
-              <Button variant='ghost'>Secondary Action</Button>
+              <Link to={"/"} >
+              <Button  variant='outline' colorScheme='blue' >Back To Home</Button>
+              </Link>
             </ModalFooter>
           </ModalContent>
         </Modal>
