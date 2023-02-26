@@ -45,7 +45,7 @@ const DailyDeals = () => {
      <Wrap justify="space-around"  >
       {
         imagesList.map((el)=>{
-          return   <Box border={"1px solid red"} > 
+          return   <Box border={"1px solid red"}  key={Date.now()}> 
             <Box width={"200px"} height="200px"  > <Image src={el.src} alt={el.alt} /> </Box>
             <Box textAlign={"center"} >
             <Heading size='sm' >{el.alt}</Heading>
