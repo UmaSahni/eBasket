@@ -13,6 +13,7 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import SearchBox from "../ShoesPage/SearchBox";
+import { FaShoppingCart } from "react-icons/fa";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -94,7 +95,10 @@ const DesktopNav = () => {
         Shoes
       </Link>
     <SearchBox/> 
-    <Link to={"/cart"} >Cart</Link>
+    <Link to={"/cart"} >
+    <FaShoppingCart size={"30"} />
+     
+      </Link>
       {/* <Button as={"a"} variant={"link"} href={"/services"} _hover={{ textDecoration: "none" }}>
         Services
       </Button>
