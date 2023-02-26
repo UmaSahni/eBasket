@@ -1,6 +1,7 @@
 import { Box, Button, Heading, Image, Stack, Table, Tbody, Td, Text, Th, Thead, Tr, useBreakpointValue } from "@chakra-ui/react";
 import { useContext } from "react";
 import { FaTrash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { AppCartContext } from "../Context/CartContext";
 import { ShoesContext } from "../Context/ShoesContext";
 
@@ -92,9 +93,11 @@ const {qty} = useContext(ShoesContext)
           <Text fontWeight="bold" mb="2">
             Total: ${state.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2)}
           </Text>
-          <Button colorScheme="blue" mr={{ base: 0, md: "2" }} mb={{ base: "2", md: 0 }}>
+          <Link to="/payment" >
+          <Button  colorScheme="blue" mr={{ base: 0, md: "2" }} mb={{ base: "2", md: 0 }}>
             Checkout
           </Button>
+          </Link>
           <Button variant="ghost">Continue Shopping</Button>
         </Box>
       </Stack>
