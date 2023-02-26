@@ -1,5 +1,6 @@
 import { Box, Flex, Grid, GridItem, HStack, SimpleGrid, Spacer, VStack } from '@chakra-ui/react'
 import React from 'react'
+import Footer from '../Homepage/Footer'
 import BlackBox from '../ShoesPage/BlackBox'
 import CatBox from '../ShoesPage/CatBox'
 import ShoesProduct from '../ShoesPage/ShoesProduct'
@@ -18,7 +19,7 @@ const Shoes = () => {
             <GridItem colSpan={4}><ShoesProduct/></GridItem>
         </Grid>
        
-        
+     
     </div>
   )
 }

@@ -8,7 +8,9 @@ import {
   Collapse,
   useColorModeValue,
   useDisclosure,
-  Image
+  Image,
+  Spacer,
+  Center
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
@@ -78,34 +80,30 @@ export default function Navbar() {
 
 const DesktopNav = () => {
   return (
-    <Stack align={"center"} fontSize={"md"}  color="gray" direction={"row"} spacing={9}>
+    
+    <Stack align={"center"}  fontSize={"md"}  color="gray" direction={"row"} spacing={9}>
       <Button as={"a"} variant={"link"} href={"/"} _hover={{ textDecoration: "none" }}>
       </Button>
-     
-      <Link to={"/shoes"} >
-        Shoes
-      </Link>
-      <Link to={"/laptop"} >
-        laptop
-      </Link>
+      
       <Link to={"/shoes"} >
         Shoes
       </Link>
       <Link to={"/shoes"} >
-        Shoes
+        Electronics
       </Link>
-    <SearchBox/> 
-    <Link to={"/cart"} >
-    <FaShoppingCart size={"30"} />
-     
+      <Link to={"/shoes"} >
+        Motors
       </Link>
-      {/* <Button as={"a"} variant={"link"} href={"/services"} _hover={{ textDecoration: "none" }}>
-        Services
-      </Button>
-      <Button as={"a"} variant={"link"} href={"/contact"} _hover={{ textDecoration: "none" }}>
-        Contact
-      </Button> */}
+      <Link to={"/shoes"} >
+        Fashion
+      </Link>
+      <SearchBox/>
+      <Link to={"/cart"} >
+        <FaShoppingCart  size={"30"} />
+     </Link>
+      
     </Stack>
+    
   );
 };
 
