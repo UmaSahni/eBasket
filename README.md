@@ -23,6 +23,7 @@ React.js and Chakra UI library for the frontend UI components
 ![image](https://user-images.githubusercontent.com/112793743/221490434-49a61a07-fa62-4f4e-b3b0-3cdd8c936592.png)
 
 #### Shoping Cart 
+##### You can here increase or decrease the quantity of the product. It also has REMOVE button from which product will be remeoved from the cart.
 ![image](https://user-images.githubusercontent.com/112793743/221490653-3dcf3220-3ae3-4732-b1f5-f688539c9a92.png)
 
 
