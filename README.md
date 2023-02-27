@@ -26,6 +26,10 @@ React.js and Chakra UI library for the frontend UI components
 ##### You can here increase or decrease the quantity of the product. It also has REMOVE button from which product will be remeoved from the cart.
 ![image](https://user-images.githubusercontent.com/112793743/221490653-3dcf3220-3ae3-4732-b1f5-f688539c9a92.png)
 
+#### Payment Page 
+##### From here can make the payment and go back to home page 
+![image](https://user-images.githubusercontent.com/112793743/221492957-4ae6d6c2-f593-48bc-8cb5-256b456cf7eb.png)
+
 
 
 
