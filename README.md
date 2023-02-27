@@ -2,6 +2,14 @@
 
 ``This project is a clone of the popular e-commerce website eBay.com. The purpose of this project is to demonstrate my ability to create a full-stack web application using modern web development tools and technologies.``
 
+Website URL - https://e-basket.vercel.app/
+<br/>
+Backend Data - https://turquoise-snapper-hat.cyclic.app/mens-shoes
+<br/>
+Original Website - https://www.ebay.com/
+
+<b> Website is deployed on vercel.com and for backend it is deployed on cyclic.com </b>
+
 ![image](https://user-images.githubusercontent.com/112793743/221488574-fc59b18e-e9e4-4a3f-826a-d6147735cbaa.png)
 
 ### Features
