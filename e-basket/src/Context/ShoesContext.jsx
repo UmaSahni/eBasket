@@ -8,18 +8,18 @@ export const ShoesContext = createContext()
 
 
 const GetShoes = (page, oderby, filterBy,reset) =>{
-  let baseURL = `https://turquoise-snapper-hat.cyclic.app/mens-shoes?_page=${page}&_limit=8`
+  let baseURL = `https://ebasket-json-data.onrender.com/mens-shoes?_page=${page}&_limit=8`
   if(oderby){
-    baseURL= `https://turquoise-snapper-hat.cyclic.app/mens-shoes?_page=${page}&_limit=8&_sort=price&_order=${oderby}`
+    baseURL= `https://ebasket-json-data.onrender.com/mens-shoes?_page=${page}&_limit=8&_sort=price&_order=${oderby}`
   }
   if(filterBy){
-    baseURL= `https://turquoise-snapper-hat.cyclic.app/mens-shoes?_page=${page}&_limit=8&brand=${filterBy}`
+    baseURL= `https://ebasket-json-data.onrender.com/mens-shoes?_page=${page}&_limit=8&brand=${filterBy}`
   }
   if(oderby && filterBy){
-    baseURL= `https://turquoise-snapper-hat.cyclic.app/mens-shoes?_page=${page}&_limit=8&_sort=price&_order=${oderby}&brand=${filterBy}`
+    baseURL= `https://ebasket-json-data.onrender.com/mens-shoes?_page=${page}&_limit=8&_sort=price&_order=${oderby}&brand=${filterBy}`
   }
   if(reset){
-    baseURL = `https://turquoise-snapper-hat.cyclic.app/mens-shoes?_page=${page}&_limit=8`
+    baseURL = `https://ebasket-json-data.onrender.com/mens-shoes?_page=${page}&_limit=8`
   }
     return  axios.get(baseURL)
   }
@@ -44,13 +44,13 @@ const ShoesContextProvider = ({children}) => {
     const [singleData, setSingleData] = useState({})
     const [qty, setqty] = useState(1)
     const handleSerach = () =>{
-        axios.get(`https://turquoise-snapper-hat.cyclic.app/mens-shoes?q=${query}`)
+        axios.get(`https://ebasket-json-data.onrender.com/mens-shoes?q=${query}`)
         .then((res)=> setData(res.data))
    setQuery("")
   }  
 
   const SingleDetailsPage = (userId) =>{
-    axios.get(`https://turquoise-snapper-hat.cyclic.app/mens-shoes/${userId}`)
+    axios.get(`https://ebasket-json-data.onrender.com/mens-shoes/${userId}`)
     .then((res)=>setSingleData(res.data))
   }
     
